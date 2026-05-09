@@ -1,0 +1,22 @@
+[package]
+name = "faithful_upscaler"
+version = "0.1.0"
+description = "A minimal Tauri image upscaler focused on fidelity"
+authors = ["OpenAI Codex"]
+license = ""
+repository = ""
+edition = "2021"
+rust-version = "1.77.2"
+
+[build-dependencies]
+tauri-build = { version = "2", features = [] }
+
+[dependencies]
+image = { version = "0.25", default-features = false, features = ["bmp", "gif", "jpeg", "png", "tiff", "webp"] }
+serde = { version = "1", features = ["derive"] }
+tauri = { version = "2", features = [] }
+tauri-plugin-dialog = "2"
+
+[features]
+custom-protocol = ["tauri/custom-protocol"]
+

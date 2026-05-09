@@ -1,0 +1,64 @@
+<!doctype html>
+<html lang="zh-CN">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>保真放大器</title>
+    <link rel="stylesheet" href="./styles.css" />
+  </head>
+  <body>
+    <main class="shell">
+      <section class="hero">
+        <p class="eyebrow">Faithful Upscaler</p>
+        <h1>把 1~2M 原图稳稳放大到更高像素</h1>
+        <p class="intro">
+          这不是 AI 重绘工具。它优先保留原图内容，用高质量插值和轻微锐化做保真放大。制作人微信: ddff9294
+        </p>
+      </section>
+
+      <section class="panel">
+        <div class="panel-row">
+          <div>
+            <p class="label">原始图片</p>
+            <p id="image-name" class="value">尚未选择图片</p>
+            <p id="image-meta" class="subtle">支持 JPG、PNG、BMP、WEBP</p>
+          </div>
+          <button id="pick-image" class="primary">选择图片</button>
+        </div>
+
+        <div class="choices">
+          <button class="choice active" data-target="7">
+            <span class="choice-title">5~8M</span>
+            <span class="choice-meta">固定输出 7MP</span>
+          </button>
+          <button class="choice" data-target="11">
+            <span class="choice-title">9~12M</span>
+            <span class="choice-meta">固定输出 11MP</span>
+          </button>
+          <button class="choice" data-target="14">
+            <span class="choice-title">13~15M</span>
+            <span class="choice-meta">固定输出 14MP</span>
+          </button>
+        </div>
+
+        <div class="summary">
+          <div class="summary-card">
+            <p class="label">当前输出</p>
+            <p id="target-meta" class="value">7MP 保真放大</p>
+          </div>
+          <div class="summary-card">
+            <p class="label">结果文件</p>
+            <p id="output-path" class="subtle">会自动保存在原图同目录</p>
+          </div>
+        </div>
+
+        <div class="actions">
+          <button id="run" class="primary wide">开始处理</button>
+          <p id="status" class="status">等待选择图片</p>
+        </div>
+      </section>
+    </main>
+
+    <script src="./main.js"></script>
+  </body>
+</html>
